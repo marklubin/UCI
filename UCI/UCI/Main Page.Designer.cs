@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.TabNav = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabPeople = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,6 +47,17 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tabCalendar = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.GroupsDayGroupBox = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.DayCalendarComboBox = new System.Windows.Forms.ComboBox();
+            this.DoorGroupCalendarComboBox = new System.Windows.Forms.ComboBox();
+            this.PersonGroupCalendarComboBox = new System.Windows.Forms.ComboBox();
             this.tabSecurity = new System.Windows.Forms.TabPage();
             this.buttonSecPrint = new System.Windows.Forms.Button();
             this.listAlerts = new System.Windows.Forms.ListBox();
@@ -63,15 +75,6 @@
             this.radioOnAlarm = new System.Windows.Forms.RadioButton();
             this.radioOffAlarm = new System.Windows.Forms.RadioButton();
             this.tabDoors = new System.Windows.Forms.TabPage();
-            this.buttonReturn1 = new System.Windows.Forms.Button();
-            this.radioDoors = new System.Windows.Forms.RadioButton();
-            this.radioSupervisor = new System.Windows.Forms.RadioButton();
-            this.radioSecurity = new System.Windows.Forms.RadioButton();
-            this.radioCalendar = new System.Windows.Forms.RadioButton();
-            this.radioPeople = new System.Windows.Forms.RadioButton();
-            this.buttonSubmit = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -82,29 +85,78 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.tabControl.SuspendLayout();
+            this.AccessPanelTab = new System.Windows.Forms.TabPage();
+            this.TimeKeeperDisplay = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.AlarmTimerDisplay = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.KeypadGroupBox = new System.Windows.Forms.GroupBox();
+            this.keypadButton0 = new System.Windows.Forms.Button();
+            this.keypadButton9 = new System.Windows.Forms.Button();
+            this.keypadButton8 = new System.Windows.Forms.Button();
+            this.keypadButton7 = new System.Windows.Forms.Button();
+            this.keypadButton6 = new System.Windows.Forms.Button();
+            this.keypadButton5 = new System.Windows.Forms.Button();
+            this.keypadButton4 = new System.Windows.Forms.Button();
+            this.keypadButton3 = new System.Windows.Forms.Button();
+            this.keypadButton2 = new System.Windows.Forms.Button();
+            this.keypadButton1 = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.enterButton = new System.Windows.Forms.Button();
+            this.ControlPanelDisplay = new System.Windows.Forms.Label();
+            this.DoorPersonSelection = new System.Windows.Forms.GroupBox();
+            this.DoorPersonSelectionButton = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.PersonSelectComboBox = new System.Windows.Forms.ComboBox();
+            this.DoorSelectComboBox = new System.Windows.Forms.ComboBox();
+            this.buttonReturn1 = new System.Windows.Forms.Button();
+            this.radioDoors = new System.Windows.Forms.RadioButton();
+            this.radioSupervisor = new System.Windows.Forms.RadioButton();
+            this.radioSecurity = new System.Windows.Forms.RadioButton();
+            this.radioCalendar = new System.Windows.Forms.RadioButton();
+            this.radioPeople = new System.Windows.Forms.RadioButton();
+            this.buttonSubmit = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioAccessPanel = new System.Windows.Forms.RadioButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.DoorOpenButton = new System.Windows.Forms.Button();
+            this.DoorCloseButton = new System.Windows.Forms.Button();
+            this.DoorStatusDisplay = new System.Windows.Forms.Label();
+            this.TabNav.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabPeople.SuspendLayout();
+            this.tabCalendar.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.GroupsDayGroupBox.SuspendLayout();
             this.tabSecurity.SuspendLayout();
             this.tabSupervisor.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabDoors.SuspendLayout();
+            this.AccessPanelTab.SuspendLayout();
+            this.KeypadGroupBox.SuspendLayout();
+            this.DoorPersonSelection.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl
+            // TabNav
             // 
-            this.tabControl.Controls.Add(this.tabMain);
-            this.tabControl.Controls.Add(this.tabPeople);
-            this.tabControl.Controls.Add(this.tabCalendar);
-            this.tabControl.Controls.Add(this.tabSecurity);
-            this.tabControl.Controls.Add(this.tabSupervisor);
-            this.tabControl.Controls.Add(this.tabDoors);
-            this.tabControl.Location = new System.Drawing.Point(-3, -26);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(594, 373);
-            this.tabControl.TabIndex = 0;
+            this.TabNav.Controls.Add(this.tabMain);
+            this.TabNav.Controls.Add(this.tabPeople);
+            this.TabNav.Controls.Add(this.tabCalendar);
+            this.TabNav.Controls.Add(this.tabSecurity);
+            this.TabNav.Controls.Add(this.tabSupervisor);
+            this.TabNav.Controls.Add(this.tabDoors);
+            this.TabNav.Controls.Add(this.AccessPanelTab);
+            this.TabNav.Location = new System.Drawing.Point(-3, 3);
+            this.TabNav.Name = "TabNav";
+            this.TabNav.SelectedIndex = 0;
+            this.TabNav.Size = new System.Drawing.Size(789, 568);
+            this.TabNav.TabIndex = 0;
             // 
             // tabMain
             // 
@@ -112,10 +164,20 @@
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMain.Size = new System.Drawing.Size(586, 347);
+            this.tabMain.Size = new System.Drawing.Size(783, 486);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Main";
             this.tabMain.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(27, 85);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(542, 39);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Welcome to UCI Access Control";
             // 
             // tabPeople
             // 
@@ -136,7 +198,7 @@
             this.tabPeople.Location = new System.Drawing.Point(4, 22);
             this.tabPeople.Name = "tabPeople";
             this.tabPeople.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPeople.Size = new System.Drawing.Size(586, 347);
+            this.tabPeople.Size = new System.Drawing.Size(783, 486);
             this.tabPeople.TabIndex = 1;
             this.tabPeople.Text = "People";
             this.tabPeople.UseVisualStyleBackColor = true;
@@ -258,13 +320,119 @@
             // 
             // tabCalendar
             // 
+            this.tabCalendar.Controls.Add(this.groupBox3);
+            this.tabCalendar.Controls.Add(this.GroupsDayGroupBox);
             this.tabCalendar.Location = new System.Drawing.Point(4, 22);
             this.tabCalendar.Name = "tabCalendar";
             this.tabCalendar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCalendar.Size = new System.Drawing.Size(586, 318);
+            this.tabCalendar.Size = new System.Drawing.Size(783, 486);
             this.tabCalendar.TabIndex = 2;
-            this.tabCalendar.Text = "Calendar";
+            this.tabCalendar.Text = " Calendars";
             this.tabCalendar.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.checkedListBox1);
+            this.groupBox3.Location = new System.Drawing.Point(349, 27);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(417, 396);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Hourly Access";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(190, 367);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(189, 23);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Update";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(25, 53);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(354, 304);
+            this.checkedListBox1.TabIndex = 0;
+            // 
+            // GroupsDayGroupBox
+            // 
+            this.GroupsDayGroupBox.Controls.Add(this.button3);
+            this.GroupsDayGroupBox.Controls.Add(this.label25);
+            this.GroupsDayGroupBox.Controls.Add(this.label24);
+            this.GroupsDayGroupBox.Controls.Add(this.label23);
+            this.GroupsDayGroupBox.Controls.Add(this.DayCalendarComboBox);
+            this.GroupsDayGroupBox.Controls.Add(this.DoorGroupCalendarComboBox);
+            this.GroupsDayGroupBox.Controls.Add(this.PersonGroupCalendarComboBox);
+            this.GroupsDayGroupBox.Location = new System.Drawing.Point(22, 27);
+            this.GroupsDayGroupBox.Name = "GroupsDayGroupBox";
+            this.GroupsDayGroupBox.Size = new System.Drawing.Size(309, 232);
+            this.GroupsDayGroupBox.TabIndex = 0;
+            this.GroupsDayGroupBox.TabStop = false;
+            this.GroupsDayGroupBox.Text = "Groups and Day";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(82, 184);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(187, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Select";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 144);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(26, 13);
+            this.label25.TabIndex = 4;
+            this.label25.Text = "Day";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(7, 103);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 13);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "DoorGroup";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 57);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(69, 13);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "PersonGroup";
+            // 
+            // DayCalendarComboBox
+            // 
+            this.DayCalendarComboBox.FormattingEnabled = true;
+            this.DayCalendarComboBox.Location = new System.Drawing.Point(82, 141);
+            this.DayCalendarComboBox.Name = "DayCalendarComboBox";
+            this.DayCalendarComboBox.Size = new System.Drawing.Size(187, 21);
+            this.DayCalendarComboBox.TabIndex = 2;
+            // 
+            // DoorGroupCalendarComboBox
+            // 
+            this.DoorGroupCalendarComboBox.FormattingEnabled = true;
+            this.DoorGroupCalendarComboBox.Location = new System.Drawing.Point(82, 99);
+            this.DoorGroupCalendarComboBox.Name = "DoorGroupCalendarComboBox";
+            this.DoorGroupCalendarComboBox.Size = new System.Drawing.Size(187, 21);
+            this.DoorGroupCalendarComboBox.TabIndex = 1;
+            // 
+            // PersonGroupCalendarComboBox
+            // 
+            this.PersonGroupCalendarComboBox.FormattingEnabled = true;
+            this.PersonGroupCalendarComboBox.Location = new System.Drawing.Point(82, 53);
+            this.PersonGroupCalendarComboBox.Name = "PersonGroupCalendarComboBox";
+            this.PersonGroupCalendarComboBox.Size = new System.Drawing.Size(187, 21);
+            this.PersonGroupCalendarComboBox.TabIndex = 0;
             // 
             // tabSecurity
             // 
@@ -273,7 +441,7 @@
             this.tabSecurity.Location = new System.Drawing.Point(4, 22);
             this.tabSecurity.Name = "tabSecurity";
             this.tabSecurity.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSecurity.Size = new System.Drawing.Size(586, 318);
+            this.tabSecurity.Size = new System.Drawing.Size(783, 486);
             this.tabSecurity.TabIndex = 3;
             this.tabSecurity.Text = "Security";
             this.tabSecurity.UseVisualStyleBackColor = true;
@@ -309,7 +477,7 @@
             this.tabSupervisor.Location = new System.Drawing.Point(4, 22);
             this.tabSupervisor.Name = "tabSupervisor";
             this.tabSupervisor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupervisor.Size = new System.Drawing.Size(586, 318);
+            this.tabSupervisor.Size = new System.Drawing.Size(783, 486);
             this.tabSupervisor.TabIndex = 4;
             this.tabSupervisor.Text = "Supervisor";
             this.tabSupervisor.UseVisualStyleBackColor = true;
@@ -440,107 +608,10 @@
             this.tabDoors.Location = new System.Drawing.Point(4, 22);
             this.tabDoors.Name = "tabDoors";
             this.tabDoors.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDoors.Size = new System.Drawing.Size(586, 318);
+            this.tabDoors.Size = new System.Drawing.Size(783, 486);
             this.tabDoors.TabIndex = 5;
             this.tabDoors.Text = "Doors";
             this.tabDoors.UseVisualStyleBackColor = true;
-            // 
-            // buttonReturn1
-            // 
-            this.buttonReturn1.Location = new System.Drawing.Point(597, 314);
-            this.buttonReturn1.Name = "buttonReturn1";
-            this.buttonReturn1.Size = new System.Drawing.Size(97, 23);
-            this.buttonReturn1.TabIndex = 0;
-            this.buttonReturn1.Text = "Main";
-            this.buttonReturn1.UseVisualStyleBackColor = true;
-            this.buttonReturn1.Click += new System.EventHandler(this.returnButton1_Click);
-            // 
-            // radioDoors
-            // 
-            this.radioDoors.AutoSize = true;
-            this.radioDoors.Location = new System.Drawing.Point(6, 34);
-            this.radioDoors.Name = "radioDoors";
-            this.radioDoors.Size = new System.Drawing.Size(53, 17);
-            this.radioDoors.TabIndex = 5;
-            this.radioDoors.Text = "Doors";
-            this.radioDoors.UseVisualStyleBackColor = true;
-            // 
-            // radioSupervisor
-            // 
-            this.radioSupervisor.AutoSize = true;
-            this.radioSupervisor.Location = new System.Drawing.Point(6, 57);
-            this.radioSupervisor.Name = "radioSupervisor";
-            this.radioSupervisor.Size = new System.Drawing.Size(75, 17);
-            this.radioSupervisor.TabIndex = 4;
-            this.radioSupervisor.Text = "Supervisor";
-            this.radioSupervisor.UseVisualStyleBackColor = true;
-            // 
-            // radioSecurity
-            // 
-            this.radioSecurity.AutoSize = true;
-            this.radioSecurity.Location = new System.Drawing.Point(6, 80);
-            this.radioSecurity.Name = "radioSecurity";
-            this.radioSecurity.Size = new System.Drawing.Size(63, 17);
-            this.radioSecurity.TabIndex = 3;
-            this.radioSecurity.Text = "Security";
-            this.radioSecurity.UseVisualStyleBackColor = true;
-            // 
-            // radioCalendar
-            // 
-            this.radioCalendar.AutoSize = true;
-            this.radioCalendar.Location = new System.Drawing.Point(6, 103);
-            this.radioCalendar.Name = "radioCalendar";
-            this.radioCalendar.Size = new System.Drawing.Size(67, 17);
-            this.radioCalendar.TabIndex = 2;
-            this.radioCalendar.Text = "Calendar";
-            this.radioCalendar.UseVisualStyleBackColor = true;
-            // 
-            // radioPeople
-            // 
-            this.radioPeople.AutoSize = true;
-            this.radioPeople.Checked = true;
-            this.radioPeople.Location = new System.Drawing.Point(6, 126);
-            this.radioPeople.Name = "radioPeople";
-            this.radioPeople.Size = new System.Drawing.Size(58, 17);
-            this.radioPeople.TabIndex = 1;
-            this.radioPeople.TabStop = true;
-            this.radioPeople.Text = "People";
-            this.radioPeople.UseVisualStyleBackColor = true;
-            // 
-            // buttonSubmit
-            // 
-            this.buttonSubmit.Location = new System.Drawing.Point(597, 285);
-            this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(97, 23);
-            this.buttonSubmit.TabIndex = 0;
-            this.buttonSubmit.Text = "Goto";
-            this.buttonSubmit.UseVisualStyleBackColor = true;
-            this.buttonSubmit.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.AutoSize = true;
-            this.groupBox2.Controls.Add(this.radioDoors);
-            this.groupBox2.Controls.Add(this.radioCalendar);
-            this.groupBox2.Controls.Add(this.radioSecurity);
-            this.groupBox2.Controls.Add(this.radioPeople);
-            this.groupBox2.Controls.Add(this.radioSupervisor);
-            this.groupBox2.Location = new System.Drawing.Point(597, 117);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(97, 162);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Navigation";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(27, 85);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(542, 39);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Welcome to UCI Access Control";
             // 
             // label13
             // 
@@ -625,22 +696,481 @@
             this.listView2.TabIndex = 13;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
+            // AccessPanelTab
+            // 
+            this.AccessPanelTab.Controls.Add(this.groupBox4);
+            this.AccessPanelTab.Controls.Add(this.TimeKeeperDisplay);
+            this.AccessPanelTab.Controls.Add(this.label28);
+            this.AccessPanelTab.Controls.Add(this.AlarmTimerDisplay);
+            this.AccessPanelTab.Controls.Add(this.label26);
+            this.AccessPanelTab.Controls.Add(this.KeypadGroupBox);
+            this.AccessPanelTab.Controls.Add(this.ControlPanelDisplay);
+            this.AccessPanelTab.Controls.Add(this.DoorPersonSelection);
+            this.AccessPanelTab.Location = new System.Drawing.Point(4, 22);
+            this.AccessPanelTab.Name = "AccessPanelTab";
+            this.AccessPanelTab.Padding = new System.Windows.Forms.Padding(3);
+            this.AccessPanelTab.Size = new System.Drawing.Size(781, 542);
+            this.AccessPanelTab.TabIndex = 6;
+            this.AccessPanelTab.Text = "AccessPanelSelect";
+            this.AccessPanelTab.UseVisualStyleBackColor = true;
+            // 
+            // TimeKeeperDisplay
+            // 
+            this.TimeKeeperDisplay.AutoSize = true;
+            this.TimeKeeperDisplay.BackColor = System.Drawing.Color.Black;
+            this.TimeKeeperDisplay.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeKeeperDisplay.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.TimeKeeperDisplay.Location = new System.Drawing.Point(30, 384);
+            this.TimeKeeperDisplay.MinimumSize = new System.Drawing.Size(250, 50);
+            this.TimeKeeperDisplay.Name = "TimeKeeperDisplay";
+            this.TimeKeeperDisplay.Size = new System.Drawing.Size(250, 50);
+            this.TimeKeeperDisplay.TabIndex = 7;
+            this.TimeKeeperDisplay.Text = "0.00";
+            this.TimeKeeperDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(30, 364);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(67, 13);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "Time Keeper";
+            // 
+            // AlarmTimerDisplay
+            // 
+            this.AlarmTimerDisplay.AutoSize = true;
+            this.AlarmTimerDisplay.BackColor = System.Drawing.Color.Black;
+            this.AlarmTimerDisplay.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlarmTimerDisplay.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AlarmTimerDisplay.Location = new System.Drawing.Point(30, 296);
+            this.AlarmTimerDisplay.MinimumSize = new System.Drawing.Size(250, 50);
+            this.AlarmTimerDisplay.Name = "AlarmTimerDisplay";
+            this.AlarmTimerDisplay.Size = new System.Drawing.Size(250, 50);
+            this.AlarmTimerDisplay.TabIndex = 5;
+            this.AlarmTimerDisplay.Text = "0.00";
+            this.AlarmTimerDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(30, 276);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(62, 13);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "Alarm Timer";
+            // 
+            // KeypadGroupBox
+            // 
+            this.KeypadGroupBox.Controls.Add(this.keypadButton0);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton9);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton8);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton7);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton6);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton5);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton4);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton3);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton2);
+            this.KeypadGroupBox.Controls.Add(this.keypadButton1);
+            this.KeypadGroupBox.Controls.Add(this.clearButton);
+            this.KeypadGroupBox.Controls.Add(this.enterButton);
+            this.KeypadGroupBox.Location = new System.Drawing.Point(327, 113);
+            this.KeypadGroupBox.Name = "KeypadGroupBox";
+            this.KeypadGroupBox.Size = new System.Drawing.Size(404, 264);
+            this.KeypadGroupBox.TabIndex = 2;
+            this.KeypadGroupBox.TabStop = false;
+            this.KeypadGroupBox.Text = "Keypad";
+            this.KeypadGroupBox.Enter += new System.EventHandler(this.KeypadGroupBox_Enter);
+            // 
+            // keypadButton0
+            // 
+            this.keypadButton0.Location = new System.Drawing.Point(256, 152);
+            this.keypadButton0.Name = "keypadButton0";
+            this.keypadButton0.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton0.TabIndex = 11;
+            this.keypadButton0.Text = "0";
+            this.keypadButton0.UseVisualStyleBackColor = true;
+            this.keypadButton0.Click += new System.EventHandler(this.keypadButton0_Click);
+            // 
+            // keypadButton9
+            // 
+            this.keypadButton9.Location = new System.Drawing.Point(256, 112);
+            this.keypadButton9.Name = "keypadButton9";
+            this.keypadButton9.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton9.TabIndex = 10;
+            this.keypadButton9.Text = "9";
+            this.keypadButton9.UseVisualStyleBackColor = true;
+            this.keypadButton9.Click += new System.EventHandler(this.keypadButton9_Click);
+            // 
+            // keypadButton8
+            // 
+            this.keypadButton8.Location = new System.Drawing.Point(155, 112);
+            this.keypadButton8.Name = "keypadButton8";
+            this.keypadButton8.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton8.TabIndex = 9;
+            this.keypadButton8.Text = "8";
+            this.keypadButton8.UseVisualStyleBackColor = true;
+            this.keypadButton8.Click += new System.EventHandler(this.keypadButton8_Click);
+            // 
+            // keypadButton7
+            // 
+            this.keypadButton7.Location = new System.Drawing.Point(54, 112);
+            this.keypadButton7.Name = "keypadButton7";
+            this.keypadButton7.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton7.TabIndex = 8;
+            this.keypadButton7.Text = "7";
+            this.keypadButton7.UseVisualStyleBackColor = true;
+            this.keypadButton7.Click += new System.EventHandler(this.keypadButton7_Click);
+            // 
+            // keypadButton6
+            // 
+            this.keypadButton6.Location = new System.Drawing.Point(256, 67);
+            this.keypadButton6.Name = "keypadButton6";
+            this.keypadButton6.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton6.TabIndex = 7;
+            this.keypadButton6.Text = "6";
+            this.keypadButton6.UseVisualStyleBackColor = true;
+            this.keypadButton6.Click += new System.EventHandler(this.keypadButton6_Click);
+            // 
+            // keypadButton5
+            // 
+            this.keypadButton5.Location = new System.Drawing.Point(155, 67);
+            this.keypadButton5.Name = "keypadButton5";
+            this.keypadButton5.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton5.TabIndex = 6;
+            this.keypadButton5.Text = "5";
+            this.keypadButton5.UseVisualStyleBackColor = true;
+            this.keypadButton5.Click += new System.EventHandler(this.keypadButton5_Click);
+            // 
+            // keypadButton4
+            // 
+            this.keypadButton4.Location = new System.Drawing.Point(54, 67);
+            this.keypadButton4.Name = "keypadButton4";
+            this.keypadButton4.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton4.TabIndex = 5;
+            this.keypadButton4.Text = "4";
+            this.keypadButton4.UseVisualStyleBackColor = true;
+            this.keypadButton4.Click += new System.EventHandler(this.keypadButton4_Click);
+            // 
+            // keypadButton3
+            // 
+            this.keypadButton3.Location = new System.Drawing.Point(256, 23);
+            this.keypadButton3.Name = "keypadButton3";
+            this.keypadButton3.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton3.TabIndex = 4;
+            this.keypadButton3.Text = "3";
+            this.keypadButton3.UseVisualStyleBackColor = true;
+            this.keypadButton3.Click += new System.EventHandler(this.keypadButton3_Click);
+            // 
+            // keypadButton2
+            // 
+            this.keypadButton2.Location = new System.Drawing.Point(155, 23);
+            this.keypadButton2.Name = "keypadButton2";
+            this.keypadButton2.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton2.TabIndex = 3;
+            this.keypadButton2.Text = "2";
+            this.keypadButton2.UseVisualStyleBackColor = true;
+            this.keypadButton2.Click += new System.EventHandler(this.keypadButton2_Click);
+            // 
+            // keypadButton1
+            // 
+            this.keypadButton1.Location = new System.Drawing.Point(54, 23);
+            this.keypadButton1.Name = "keypadButton1";
+            this.keypadButton1.Size = new System.Drawing.Size(95, 34);
+            this.keypadButton1.TabIndex = 2;
+            this.keypadButton1.Text = "1";
+            this.keypadButton1.UseVisualStyleBackColor = true;
+            this.keypadButton1.Click += new System.EventHandler(this.keypadButton1_Click);
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(54, 152);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(196, 36);
+            this.clearButton.TabIndex = 1;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // enterButton
+            // 
+            this.enterButton.Location = new System.Drawing.Point(54, 194);
+            this.enterButton.Name = "enterButton";
+            this.enterButton.Size = new System.Drawing.Size(297, 52);
+            this.enterButton.TabIndex = 0;
+            this.enterButton.Text = "Enter";
+            this.enterButton.UseVisualStyleBackColor = true;
+            this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
+            // 
+            // ControlPanelDisplay
+            // 
+            this.ControlPanelDisplay.AutoSize = true;
+            this.ControlPanelDisplay.BackColor = System.Drawing.Color.Black;
+            this.ControlPanelDisplay.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ControlPanelDisplay.ForeColor = System.Drawing.Color.Lime;
+            this.ControlPanelDisplay.Location = new System.Drawing.Point(320, 27);
+            this.ControlPanelDisplay.MaximumSize = new System.Drawing.Size(425, 75);
+            this.ControlPanelDisplay.MinimumSize = new System.Drawing.Size(425, 75);
+            this.ControlPanelDisplay.Name = "ControlPanelDisplay";
+            this.ControlPanelDisplay.Size = new System.Drawing.Size(425, 75);
+            this.ControlPanelDisplay.TabIndex = 1;
+            this.ControlPanelDisplay.Text = "Please Swipe Card";
+            this.ControlPanelDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DoorPersonSelection
+            // 
+            this.DoorPersonSelection.Controls.Add(this.DoorPersonSelectionButton);
+            this.DoorPersonSelection.Controls.Add(this.label21);
+            this.DoorPersonSelection.Controls.Add(this.label20);
+            this.DoorPersonSelection.Controls.Add(this.dateTimePicker1);
+            this.DoorPersonSelection.Controls.Add(this.label16);
+            this.DoorPersonSelection.Controls.Add(this.label15);
+            this.DoorPersonSelection.Controls.Add(this.PersonSelectComboBox);
+            this.DoorPersonSelection.Controls.Add(this.DoorSelectComboBox);
+            this.DoorPersonSelection.Location = new System.Drawing.Point(30, 27);
+            this.DoorPersonSelection.Name = "DoorPersonSelection";
+            this.DoorPersonSelection.Size = new System.Drawing.Size(274, 228);
+            this.DoorPersonSelection.TabIndex = 0;
+            this.DoorPersonSelection.TabStop = false;
+            this.DoorPersonSelection.Text = "DoorsPersonSelection";
+            // 
+            // DoorPersonSelectionButton
+            // 
+            this.DoorPersonSelectionButton.Location = new System.Drawing.Point(32, 176);
+            this.DoorPersonSelectionButton.Name = "DoorPersonSelectionButton";
+            this.DoorPersonSelectionButton.Size = new System.Drawing.Size(209, 37);
+            this.DoorPersonSelectionButton.TabIndex = 0;
+            this.DoorPersonSelectionButton.Text = "Apply Configuration";
+            this.DoorPersonSelectionButton.UseVisualStyleBackColor = true;
+            this.DoorPersonSelectionButton.Click += new System.EventHandler(this.DoorPersonSelectionButton_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(280, 14);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "label21";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(29, 138);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(30, 13);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Time";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm tt";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(85, 138);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(156, 20);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(29, 93);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 13);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Person";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(26, 51);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Door";
+            // 
+            // PersonSelectComboBox
+            // 
+            this.PersonSelectComboBox.FormattingEnabled = true;
+            this.PersonSelectComboBox.Location = new System.Drawing.Point(85, 86);
+            this.PersonSelectComboBox.Name = "PersonSelectComboBox";
+            this.PersonSelectComboBox.Size = new System.Drawing.Size(156, 21);
+            this.PersonSelectComboBox.TabIndex = 1;
+            // 
+            // DoorSelectComboBox
+            // 
+            this.DoorSelectComboBox.FormattingEnabled = true;
+            this.DoorSelectComboBox.Location = new System.Drawing.Point(85, 43);
+            this.DoorSelectComboBox.Name = "DoorSelectComboBox";
+            this.DoorSelectComboBox.Size = new System.Drawing.Size(156, 21);
+            this.DoorSelectComboBox.TabIndex = 0;
+            // 
+            // buttonReturn1
+            // 
+            this.buttonReturn1.Location = new System.Drawing.Point(803, 327);
+            this.buttonReturn1.Name = "buttonReturn1";
+            this.buttonReturn1.Size = new System.Drawing.Size(97, 23);
+            this.buttonReturn1.TabIndex = 0;
+            this.buttonReturn1.Text = "Main";
+            this.buttonReturn1.UseVisualStyleBackColor = true;
+            this.buttonReturn1.Click += new System.EventHandler(this.returnButton1_Click);
+            // 
+            // radioDoors
+            // 
+            this.radioDoors.AutoSize = true;
+            this.radioDoors.Location = new System.Drawing.Point(6, 34);
+            this.radioDoors.Name = "radioDoors";
+            this.radioDoors.Size = new System.Drawing.Size(53, 17);
+            this.radioDoors.TabIndex = 5;
+            this.radioDoors.Text = "Doors";
+            this.radioDoors.UseVisualStyleBackColor = true;
+            // 
+            // radioSupervisor
+            // 
+            this.radioSupervisor.AutoSize = true;
+            this.radioSupervisor.Location = new System.Drawing.Point(6, 57);
+            this.radioSupervisor.Name = "radioSupervisor";
+            this.radioSupervisor.Size = new System.Drawing.Size(75, 17);
+            this.radioSupervisor.TabIndex = 4;
+            this.radioSupervisor.Text = "Supervisor";
+            this.radioSupervisor.UseVisualStyleBackColor = true;
+            // 
+            // radioSecurity
+            // 
+            this.radioSecurity.AutoSize = true;
+            this.radioSecurity.Location = new System.Drawing.Point(6, 80);
+            this.radioSecurity.Name = "radioSecurity";
+            this.radioSecurity.Size = new System.Drawing.Size(63, 17);
+            this.radioSecurity.TabIndex = 3;
+            this.radioSecurity.Text = "Security";
+            this.radioSecurity.UseVisualStyleBackColor = true;
+            // 
+            // radioCalendar
+            // 
+            this.radioCalendar.AutoSize = true;
+            this.radioCalendar.Location = new System.Drawing.Point(6, 103);
+            this.radioCalendar.Name = "radioCalendar";
+            this.radioCalendar.Size = new System.Drawing.Size(67, 17);
+            this.radioCalendar.TabIndex = 2;
+            this.radioCalendar.Text = "Calendar";
+            this.radioCalendar.UseVisualStyleBackColor = true;
+            // 
+            // radioPeople
+            // 
+            this.radioPeople.AutoSize = true;
+            this.radioPeople.Checked = true;
+            this.radioPeople.Location = new System.Drawing.Point(6, 126);
+            this.radioPeople.Name = "radioPeople";
+            this.radioPeople.Size = new System.Drawing.Size(58, 17);
+            this.radioPeople.TabIndex = 1;
+            this.radioPeople.TabStop = true;
+            this.radioPeople.Text = "People";
+            this.radioPeople.UseVisualStyleBackColor = true;
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.Location = new System.Drawing.Point(806, 296);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(97, 23);
+            this.buttonSubmit.TabIndex = 0;
+            this.buttonSubmit.Text = "Goto";
+            this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.Controls.Add(this.radioAccessPanel);
+            this.groupBox2.Controls.Add(this.radioDoors);
+            this.groupBox2.Controls.Add(this.radioCalendar);
+            this.groupBox2.Controls.Add(this.radioSecurity);
+            this.groupBox2.Controls.Add(this.radioPeople);
+            this.groupBox2.Controls.Add(this.radioSupervisor);
+            this.groupBox2.Location = new System.Drawing.Point(803, 52);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(102, 228);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Navigation";
+            // 
+            // radioAccessPanel
+            // 
+            this.radioAccessPanel.AutoSize = true;
+            this.radioAccessPanel.Location = new System.Drawing.Point(6, 149);
+            this.radioAccessPanel.Name = "radioAccessPanel";
+            this.radioAccessPanel.Size = new System.Drawing.Size(90, 17);
+            this.radioAccessPanel.TabIndex = 7;
+            this.radioAccessPanel.TabStop = true;
+            this.radioAccessPanel.Text = "Access Panel";
+            this.radioAccessPanel.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.DoorStatusDisplay);
+            this.groupBox4.Controls.Add(this.DoorCloseButton);
+            this.groupBox4.Controls.Add(this.DoorOpenButton);
+            this.groupBox4.Location = new System.Drawing.Point(327, 396);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(404, 119);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Door Interface";
+            // 
+            // DoorOpenButton
+            // 
+            this.DoorOpenButton.Location = new System.Drawing.Point(54, 90);
+            this.DoorOpenButton.Name = "DoorOpenButton";
+            this.DoorOpenButton.Size = new System.Drawing.Size(144, 23);
+            this.DoorOpenButton.TabIndex = 0;
+            this.DoorOpenButton.Text = "Open";
+            this.DoorOpenButton.UseVisualStyleBackColor = true;
+            this.DoorOpenButton.Click += new System.EventHandler(this.DoorOpenButton_Click);
+            // 
+            // DoorCloseButton
+            // 
+            this.DoorCloseButton.Location = new System.Drawing.Point(204, 90);
+            this.DoorCloseButton.Name = "DoorCloseButton";
+            this.DoorCloseButton.Size = new System.Drawing.Size(147, 23);
+            this.DoorCloseButton.TabIndex = 1;
+            this.DoorCloseButton.Text = "Close";
+            this.DoorCloseButton.UseVisualStyleBackColor = true;
+            this.DoorCloseButton.Click += new System.EventHandler(this.DoorCloseButton_Click);
+            // 
+            // DoorStatusDisplay
+            // 
+            this.DoorStatusDisplay.AutoSize = true;
+            this.DoorStatusDisplay.BackColor = System.Drawing.Color.Black;
+            this.DoorStatusDisplay.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoorStatusDisplay.ForeColor = System.Drawing.Color.Red;
+            this.DoorStatusDisplay.Location = new System.Drawing.Point(76, 16);
+            this.DoorStatusDisplay.MaximumSize = new System.Drawing.Size(250, 50);
+            this.DoorStatusDisplay.MinimumSize = new System.Drawing.Size(250, 50);
+            this.DoorStatusDisplay.Name = "DoorStatusDisplay";
+            this.DoorStatusDisplay.Size = new System.Drawing.Size(250, 50);
+            this.DoorStatusDisplay.TabIndex = 2;
+            this.DoorStatusDisplay.Text = "Locked";
+            this.DoorStatusDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Mainpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 344);
+            this.ClientSize = new System.Drawing.Size(927, 583);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonReturn1);
-            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.TabNav);
             this.Controls.Add(this.buttonSubmit);
             this.Name = "Mainpage";
             this.Text = "UCI";
-            this.tabControl.ResumeLayout(false);
+            this.TabNav.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabMain.PerformLayout();
             this.tabPeople.ResumeLayout(false);
             this.tabPeople.PerformLayout();
+            this.tabCalendar.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.GroupsDayGroupBox.ResumeLayout(false);
+            this.GroupsDayGroupBox.PerformLayout();
             this.tabSecurity.ResumeLayout(false);
             this.tabSupervisor.ResumeLayout(false);
             this.tabSupervisor.PerformLayout();
@@ -648,8 +1178,15 @@
             this.groupBox1.PerformLayout();
             this.tabDoors.ResumeLayout(false);
             this.tabDoors.PerformLayout();
+            this.AccessPanelTab.ResumeLayout(false);
+            this.AccessPanelTab.PerformLayout();
+            this.KeypadGroupBox.ResumeLayout(false);
+            this.DoorPersonSelection.ResumeLayout(false);
+            this.DoorPersonSelection.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,7 +1194,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabControl TabNav;
         private System.Windows.Forms.TabPage tabMain;
         private System.Windows.Forms.TabPage tabPeople;
         private System.Windows.Forms.TabPage tabCalendar;
@@ -711,6 +1248,50 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.TabPage AccessPanelTab;
+        private System.Windows.Forms.GroupBox DoorPersonSelection;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox PersonSelectComboBox;
+        private System.Windows.Forms.ComboBox DoorSelectComboBox;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label ControlPanelDisplay;
+        private System.Windows.Forms.GroupBox KeypadGroupBox;
+        private System.Windows.Forms.Button DoorPersonSelectionButton;
+        private System.Windows.Forms.Button keypadButton9;
+        private System.Windows.Forms.Button keypadButton8;
+        private System.Windows.Forms.Button keypadButton7;
+        private System.Windows.Forms.Button keypadButton6;
+        private System.Windows.Forms.Button keypadButton5;
+        private System.Windows.Forms.Button keypadButton4;
+        private System.Windows.Forms.Button keypadButton3;
+        private System.Windows.Forms.Button keypadButton2;
+        private System.Windows.Forms.Button keypadButton1;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button enterButton;
+        private System.Windows.Forms.Button keypadButton0;
+        private System.Windows.Forms.GroupBox GroupsDayGroupBox;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox DayCalendarComboBox;
+        private System.Windows.Forms.ComboBox DoorGroupCalendarComboBox;
+        private System.Windows.Forms.ComboBox PersonGroupCalendarComboBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label TimeKeeperDisplay;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label AlarmTimerDisplay;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.RadioButton radioAccessPanel;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button DoorCloseButton;
+        private System.Windows.Forms.Button DoorOpenButton;
+        private System.Windows.Forms.Label DoorStatusDisplay;
     }
 }
 
