@@ -29,7 +29,20 @@ namespace UCI
                 tabControl.SelectedTab = tabCalendar;
                 MessageBox.Show("This page is under construction, please return to the main page.");
             }
-
+            if (radioSecurity.Checked)
+            {
+                tabControl.SelectedTab = tabSecurity;
+                MessageBox.Show("Access is restricted to normal users.");
+            }
+            if (radioSupervisor.Checked)
+            {
+                tabControl.SelectedTab = tabSupervisor;
+                MessageBox.Show("Access is restricted to normal users.");
+            }
+            if (radioDoors.Checked)
+            {
+                tabControl.SelectedTab = tabDoors;
+            }
 
 
         }
@@ -43,6 +56,10 @@ namespace UCI
         {
             tabControl.SelectedTab = tabMain;
         }
+
+   
+
+
     }
 
 
