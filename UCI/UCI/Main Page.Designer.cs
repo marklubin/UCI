@@ -719,7 +719,7 @@
             this.Controls.Add(this.buttonReturn1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.buttonSubmit);
-            this.Name = "Mainpage";
+
             this.Text = "UCI";
             this.tabControl.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
