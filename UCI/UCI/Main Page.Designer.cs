@@ -86,6 +86,10 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.listView2 = new System.Windows.Forms.ListView();
             this.AccessPanelTab = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.DoorStatusDisplay = new System.Windows.Forms.Label();
+            this.DoorCloseButton = new System.Windows.Forms.Button();
+            this.DoorOpenButton = new System.Windows.Forms.Button();
             this.TimeKeeperDisplay = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.AlarmTimerDisplay = new System.Windows.Forms.Label();
@@ -122,10 +126,6 @@
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioAccessPanel = new System.Windows.Forms.RadioButton();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.DoorOpenButton = new System.Windows.Forms.Button();
-            this.DoorCloseButton = new System.Windows.Forms.Button();
-            this.DoorStatusDisplay = new System.Windows.Forms.Label();
             this.TabNav.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabPeople.SuspendLayout();
@@ -137,10 +137,10 @@
             this.groupBox1.SuspendLayout();
             this.tabDoors.SuspendLayout();
             this.AccessPanelTab.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.KeypadGroupBox.SuspendLayout();
             this.DoorPersonSelection.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabNav
@@ -164,7 +164,7 @@
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMain.Size = new System.Drawing.Size(783, 486);
+            this.tabMain.Size = new System.Drawing.Size(781, 542);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Main";
             this.tabMain.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@
             this.tabPeople.Location = new System.Drawing.Point(4, 22);
             this.tabPeople.Name = "tabPeople";
             this.tabPeople.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPeople.Size = new System.Drawing.Size(783, 486);
+            this.tabPeople.Size = new System.Drawing.Size(781, 542);
             this.tabPeople.TabIndex = 1;
             this.tabPeople.Text = "People";
             this.tabPeople.UseVisualStyleBackColor = true;
@@ -325,7 +325,7 @@
             this.tabCalendar.Location = new System.Drawing.Point(4, 22);
             this.tabCalendar.Name = "tabCalendar";
             this.tabCalendar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCalendar.Size = new System.Drawing.Size(783, 486);
+            this.tabCalendar.Size = new System.Drawing.Size(781, 542);
             this.tabCalendar.TabIndex = 2;
             this.tabCalendar.Text = " Calendars";
             this.tabCalendar.UseVisualStyleBackColor = true;
@@ -441,7 +441,7 @@
             this.tabSecurity.Location = new System.Drawing.Point(4, 22);
             this.tabSecurity.Name = "tabSecurity";
             this.tabSecurity.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSecurity.Size = new System.Drawing.Size(783, 486);
+            this.tabSecurity.Size = new System.Drawing.Size(781, 542);
             this.tabSecurity.TabIndex = 3;
             this.tabSecurity.Text = "Security";
             this.tabSecurity.UseVisualStyleBackColor = true;
@@ -477,7 +477,7 @@
             this.tabSupervisor.Location = new System.Drawing.Point(4, 22);
             this.tabSupervisor.Name = "tabSupervisor";
             this.tabSupervisor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupervisor.Size = new System.Drawing.Size(783, 486);
+            this.tabSupervisor.Size = new System.Drawing.Size(781, 542);
             this.tabSupervisor.TabIndex = 4;
             this.tabSupervisor.Text = "Supervisor";
             this.tabSupervisor.UseVisualStyleBackColor = true;
@@ -608,7 +608,7 @@
             this.tabDoors.Location = new System.Drawing.Point(4, 22);
             this.tabDoors.Name = "tabDoors";
             this.tabDoors.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDoors.Size = new System.Drawing.Size(783, 486);
+            this.tabDoors.Size = new System.Drawing.Size(781, 542);
             this.tabDoors.TabIndex = 5;
             this.tabDoors.Text = "Doors";
             this.tabDoors.UseVisualStyleBackColor = true;
@@ -713,6 +713,54 @@
             this.AccessPanelTab.TabIndex = 6;
             this.AccessPanelTab.Text = "AccessPanelSelect";
             this.AccessPanelTab.UseVisualStyleBackColor = true;
+            this.AccessPanelTab.Click += new System.EventHandler(this.AccessPanelTab_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.DoorStatusDisplay);
+            this.groupBox4.Controls.Add(this.DoorCloseButton);
+            this.groupBox4.Controls.Add(this.DoorOpenButton);
+            this.groupBox4.Location = new System.Drawing.Point(327, 396);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(404, 119);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Door Interface";
+            // 
+            // DoorStatusDisplay
+            // 
+            this.DoorStatusDisplay.AutoSize = true;
+            this.DoorStatusDisplay.BackColor = System.Drawing.Color.Black;
+            this.DoorStatusDisplay.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DoorStatusDisplay.ForeColor = System.Drawing.Color.Red;
+            this.DoorStatusDisplay.Location = new System.Drawing.Point(76, 16);
+            this.DoorStatusDisplay.MaximumSize = new System.Drawing.Size(250, 50);
+            this.DoorStatusDisplay.MinimumSize = new System.Drawing.Size(250, 50);
+            this.DoorStatusDisplay.Name = "DoorStatusDisplay";
+            this.DoorStatusDisplay.Size = new System.Drawing.Size(250, 50);
+            this.DoorStatusDisplay.TabIndex = 2;
+            this.DoorStatusDisplay.Text = "Locked";
+            this.DoorStatusDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DoorCloseButton
+            // 
+            this.DoorCloseButton.Location = new System.Drawing.Point(204, 90);
+            this.DoorCloseButton.Name = "DoorCloseButton";
+            this.DoorCloseButton.Size = new System.Drawing.Size(147, 23);
+            this.DoorCloseButton.TabIndex = 1;
+            this.DoorCloseButton.Text = "Close";
+            this.DoorCloseButton.UseVisualStyleBackColor = true;
+            this.DoorCloseButton.Click += new System.EventHandler(this.DoorCloseButton_Click);
+            // 
+            // DoorOpenButton
+            // 
+            this.DoorOpenButton.Location = new System.Drawing.Point(54, 90);
+            this.DoorOpenButton.Name = "DoorOpenButton";
+            this.DoorOpenButton.Size = new System.Drawing.Size(144, 23);
+            this.DoorOpenButton.TabIndex = 0;
+            this.DoorOpenButton.Text = "Open";
+            this.DoorOpenButton.UseVisualStyleBackColor = true;
+            this.DoorOpenButton.Click += new System.EventHandler(this.DoorOpenButton_Click);
             // 
             // TimeKeeperDisplay
             // 
@@ -1007,7 +1055,7 @@
             // 
             // buttonReturn1
             // 
-            this.buttonReturn1.Location = new System.Drawing.Point(803, 327);
+            this.buttonReturn1.Location = new System.Drawing.Point(809, 325);
             this.buttonReturn1.Name = "buttonReturn1";
             this.buttonReturn1.Size = new System.Drawing.Size(97, 23);
             this.buttonReturn1.TabIndex = 0;
@@ -1104,53 +1152,6 @@
             this.radioAccessPanel.Text = "Access Panel";
             this.radioAccessPanel.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.DoorStatusDisplay);
-            this.groupBox4.Controls.Add(this.DoorCloseButton);
-            this.groupBox4.Controls.Add(this.DoorOpenButton);
-            this.groupBox4.Location = new System.Drawing.Point(327, 396);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(404, 119);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Door Interface";
-            // 
-            // DoorOpenButton
-            // 
-            this.DoorOpenButton.Location = new System.Drawing.Point(54, 90);
-            this.DoorOpenButton.Name = "DoorOpenButton";
-            this.DoorOpenButton.Size = new System.Drawing.Size(144, 23);
-            this.DoorOpenButton.TabIndex = 0;
-            this.DoorOpenButton.Text = "Open";
-            this.DoorOpenButton.UseVisualStyleBackColor = true;
-            this.DoorOpenButton.Click += new System.EventHandler(this.DoorOpenButton_Click);
-            // 
-            // DoorCloseButton
-            // 
-            this.DoorCloseButton.Location = new System.Drawing.Point(204, 90);
-            this.DoorCloseButton.Name = "DoorCloseButton";
-            this.DoorCloseButton.Size = new System.Drawing.Size(147, 23);
-            this.DoorCloseButton.TabIndex = 1;
-            this.DoorCloseButton.Text = "Close";
-            this.DoorCloseButton.UseVisualStyleBackColor = true;
-            this.DoorCloseButton.Click += new System.EventHandler(this.DoorCloseButton_Click);
-            // 
-            // DoorStatusDisplay
-            // 
-            this.DoorStatusDisplay.AutoSize = true;
-            this.DoorStatusDisplay.BackColor = System.Drawing.Color.Black;
-            this.DoorStatusDisplay.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DoorStatusDisplay.ForeColor = System.Drawing.Color.Red;
-            this.DoorStatusDisplay.Location = new System.Drawing.Point(76, 16);
-            this.DoorStatusDisplay.MaximumSize = new System.Drawing.Size(250, 50);
-            this.DoorStatusDisplay.MinimumSize = new System.Drawing.Size(250, 50);
-            this.DoorStatusDisplay.Name = "DoorStatusDisplay";
-            this.DoorStatusDisplay.Size = new System.Drawing.Size(250, 50);
-            this.DoorStatusDisplay.TabIndex = 2;
-            this.DoorStatusDisplay.Text = "Locked";
-            this.DoorStatusDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Mainpage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1162,6 +1163,7 @@
             this.Controls.Add(this.buttonSubmit);
             this.Name = "Mainpage";
             this.Text = "UCI";
+            this.Load += new System.EventHandler(this.Mainpage_Load);
             this.TabNav.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
             this.tabMain.PerformLayout();
@@ -1180,13 +1182,13 @@
             this.tabDoors.PerformLayout();
             this.AccessPanelTab.ResumeLayout(false);
             this.AccessPanelTab.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.KeypadGroupBox.ResumeLayout(false);
             this.DoorPersonSelection.ResumeLayout(false);
             this.DoorPersonSelection.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

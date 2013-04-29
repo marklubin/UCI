@@ -151,6 +151,16 @@ namespace UCI
             DoorStatusDisplay.ForeColor = Color.GhostWhite;
         }
 
+        private void AccessPanelTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Mainpage_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
    
 
