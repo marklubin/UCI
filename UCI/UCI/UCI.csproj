@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Door.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Main Page.cs">
       <SubType>Form</SubType>
     </Compile>
