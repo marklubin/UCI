@@ -59,12 +59,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Door.cs" />
+    <Compile Include="DoorGroup.cs" />
     <Compile Include="Main Page.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Page.Designer.cs">
       <DependentUpon>Main Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonGroup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main Page.resx">
