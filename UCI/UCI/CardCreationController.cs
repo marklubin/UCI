@@ -1,8 +1,11 @@
 ﻿using System;
 
-public class CardCreationController
+namespace UCI
 {
-	public Class1()
-	{
-	}
+    public class CardCreationController
+    {
+        public CardCreationController()
+        {
+        }
+    }
 }

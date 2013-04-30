@@ -15,12 +15,7 @@ namespace UCI
         public Mainpage()
         {
             InitializeComponent();
-            Dictionary<string, Card> cardDict = new Dictionary<string, Card>();
-            Dictionary<string, Door> doorDict = new Dictionary<string, Door>();
-            Dictionary<string, PersonGroup> personGroupDict = new Dictionary<string, PersonGroup>();
-            Dictionary<string, DoorGroup> doorGroupDict = new Dictionary<string, DoorGroup>();
-            Dictionary<string, CardReader> cardReadersDict = new Dictionary<string, CardReader>();
-            Dictionary<Door, TypicalWeek> doorWeekDictionary = new Dictionary<Door, TypicalWeek>();
+
         }
 
         private Boolean passwordEntryMode = false;
@@ -33,8 +28,10 @@ namespace UCI
             }
             if (radioCalendar.Checked)
             {
+                CalendarUpdateController cuc = new CalendarUpdateController();
+                cuc.fillCalendarSelect(PersonGroupCalendarComboBox, DoorGroupCalendarComboBox);
                 TabNav.SelectedTab = tabCalendar;
-                MessageBox.Show("This page is under construction, please return to the main page.");
+                
             }
             if (radioSecurity.Checked)
             {
@@ -52,6 +49,8 @@ namespace UCI
             }
             if(radioAccessPanel.Checked)
             {
+               DoorAccessController dac = new DoorAccessController();
+               dac.FillReaderPersonSelect(DoorSelectComboBox, PersonSelectComboBox);
                TabNav.SelectedTab = AccessPanelTab;
             }
 
@@ -69,6 +68,9 @@ namespace UCI
 
         private void keypadDigitEntered(String text) 
         {
+            int x;
+            if (!int.TryParse(ControlPanelDisplay.Text,out x) && passwordEntryMode)
+                ControlPanelDisplay.Text = "";
             if (passwordEntryMode)
                 ControlPanelDisplay.Text += text;
         }
@@ -130,30 +132,73 @@ namespace UCI
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            ControlPanelDisplay.Text = "";
+            if(passwordEntryMode)
+                ControlPanelDisplay.Text = "";
         }
 
         private void enterButton_Click(object sender, EventArgs e)
         {
-            ControlPanelDisplay.Text = "Validating Access......";
+            if (!passwordEntryMode) return;
+            
+            
+            this.passwordEntryMode = false; //disable further input
+            char[] delim = new char[1];
+            delim[0] = ' ';
+            if (PersonSelectComboBox.SelectedIndex < 0 || DoorSelectComboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Select Person and Door!");
+                
+            }
+            else
+            {
+                string cardID = PersonSelectComboBox.Items[PersonSelectComboBox.SelectedIndex].ToString().Split()[0];
+                string doorID = DoorSelectComboBox.Items[DoorSelectComboBox.SelectedIndex].ToString().Split()[0];
+                string password = ControlPanelDisplay.Text;
+                DateTime dateTime = DoorAccessDateTimePicker.Value;
+
+                DoorAccessController dac = new DoorAccessController();
+
+                dac.DoorUnlockRequest(cardID, doorID, password, dateTime, ControlPanelDisplay, DoorStatusDisplay,TimeKeeperDisplay);
+
+            }
         }
 
         private void DoorPersonSelectionButton_Click(object sender, EventArgs e)
         {
-            passwordEntryMode = true;
-            ControlPanelDisplay.Text = "";
+            DoorAccessController dac = new DoorAccessController();
+            char[] delim = new char[1];
+            delim[0] = ' ';
+            if (PersonSelectComboBox.SelectedIndex < 0 || DoorSelectComboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Select Person and Door!");
+                this.passwordEntryMode = false;
+            }
+            else
+            {
+                string cardID = PersonSelectComboBox.Items[PersonSelectComboBox.SelectedIndex].ToString().Split()[0];
+                this.passwordEntryMode = dac.ValidateCard(cardID, ControlPanelDisplay);
+            }
+
         }
 
         private void DoorOpenButton_Click(object sender, EventArgs e)
         {
-            DoorStatusDisplay.Text = "Opened";
-            DoorStatusDisplay.ForeColor = Color.Lime;
+            if (DoorSelectComboBox.SelectedIndex < 0) return;
+
+            DoorAccessController dac = new DoorAccessController();
+            String id = DoorSelectComboBox.Items[DoorSelectComboBox.SelectedIndex].ToString().Split()[0];
+            dac.DoorOpenRequest(id,AlarmTimerDisplay,ControlPanelDisplay);
+            
         }
 
         private void DoorCloseButton_Click(object sender, EventArgs e)
         {
-            DoorStatusDisplay.Text = "Closed";
-            DoorStatusDisplay.ForeColor = Color.GhostWhite;
+             if(DoorSelectComboBox.SelectedIndex < 0) return;
+
+            DoorAccessController dac = new DoorAccessController();
+            String id = DoorSelectComboBox.Items[DoorSelectComboBox.SelectedIndex].ToString().Split()[0];
+            dac.DoorCloseRequest(id, DoorStatusDisplay,ControlPanelDisplay);
+
         }
 
         private void AccessPanelTab_Click(object sender, EventArgs e)
@@ -163,6 +208,58 @@ namespace UCI
 
         private void Mainpage_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void PersonGroupCalendarComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HourSelectCheckListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (PersonGroupCalendarComboBox.SelectedIndex < 0 ||
+                DoorGroupCalendarComboBox.SelectedIndex < 0 ||
+                DayCalendarComboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Enter all required information");
+            }
+            else
+            {
+                string pgID = PersonGroupCalendarComboBox.Items[PersonGroupCalendarComboBox.SelectedIndex].ToString();
+                string dgID = DoorGroupCalendarComboBox.Items[DoorGroupCalendarComboBox.SelectedIndex].ToString();
+                DayOfWeek day = (DayOfWeek)DayCalendarComboBox.SelectedIndex;
+                CalendarUpdateController cuc = new CalendarUpdateController();
+
+                cuc.getCalendarStatusForDay(pgID, dgID, day, HourSelectCheckListBox);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string pgID = PersonGroupCalendarComboBox.Items[PersonGroupCalendarComboBox.SelectedIndex].ToString();
+            string dgID = DoorGroupCalendarComboBox.Items[DoorGroupCalendarComboBox.SelectedIndex].ToString();
+            DayOfWeek day = (DayOfWeek)DayCalendarComboBox.SelectedIndex;
+
+            Boolean[] status = new Boolean[24];
+
+            for (int i = 0; i < 24; i++)
+            {
+                status[i] = HourSelectCheckListBox.CheckedIndices.Contains(i);
+
+            }
+
+            CalendarUpdateController cuc = new CalendarUpdateController();
+
+            cuc.setAccessStatus(pgID, dgID, day, status);
+
+            HourSelectCheckListBox.Items.Clear();
+            MessageBox.Show("Calendar Updated!");
 
         }
 

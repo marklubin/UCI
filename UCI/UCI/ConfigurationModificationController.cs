@@ -1,8 +1,13 @@
 ﻿using System;
 
-public class ConfigurationModificationController
+
+namespace UCI
 {
-	public Class1()
-	{
-	}
+    public class ConfigurationModificationController
+    {
+        public ConfigurationModificationController()
+        {
+        }
+    }
+
 }

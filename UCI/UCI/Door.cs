@@ -8,49 +8,19 @@ namespace UCI
 {
 
 
-    public class idglobal2
-    {
-        public static int num = 0;
-    }
-
-    class Door
+   public class Door
     {
 
-        public int ID;
-        public string Group;
+       public String DoorID;
+       public LinkedList<DoorGroup> groups = new LinkedList<DoorGroup>();
+       public Boolean locked { get; set; }
+       public Boolean opened { get; set; }
 
-
-
-
-         public Door(int id,string grp){
-
-             ID = id;
-             Group = grp;
-
+         public Door(String DoorID){
+             this.DoorID = DoorID;
+             this.locked = true;
+             this.opened = false;
          }
 
-
-         public String IDtoString()
-         {
-
-             String buff;
-
-
-             buff = ID.ToString();
-
-             return buff;
-         }
-
-
-         public String GrouptoString()
-         {
-
-             String buff;
-
-             buff = Group;
-
-
-             return buff;
-         }
     }
 }

@@ -14,6 +14,7 @@ namespace UCI
         [STAThread]
         static void Main()
         {
+            UCIDatabase.InitalizeSystem(); //initalize doors and card readers
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Mainpage());

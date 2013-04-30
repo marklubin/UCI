@@ -59,8 +59,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CalendarUpdateController.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="CardCreationController.cs" />
+    <Compile Include="CardReader.cs" />
+    <Compile Include="ConfigurationModificationController.cs" />
     <Compile Include="Door.cs" />
+    <Compile Include="DoorAccessController.cs" />
     <Compile Include="DoorGroup.cs" />
     <Compile Include="Main Page.cs">
       <SubType>Form</SubType>
@@ -68,10 +73,14 @@
     <Compile Include="Main Page.Designer.cs">
       <DependentUpon>Main Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Message.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonGroup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeControllers.cs" />
+    <Compile Include="TypicalWeek.cs" />
+    <Compile Include="UCIDatabase.cs" />
     <EmbeddedResource Include="Main Page.resx">
       <DependentUpon>Main Page.cs</DependentUpon>
     </EmbeddedResource>

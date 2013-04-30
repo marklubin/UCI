@@ -48,10 +48,10 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.tabCalendar = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.CalendarUpdateButton = new System.Windows.Forms.Button();
+            this.HourSelectCheckListBox = new System.Windows.Forms.CheckedListBox();
             this.GroupsDayGroupBox = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.CalendarSelectButton = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -112,7 +112,7 @@
             this.DoorPersonSelectionButton = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DoorAccessDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.PersonSelectComboBox = new System.Windows.Forms.ComboBox();
@@ -332,8 +332,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.checkedListBox1);
+            this.groupBox3.Controls.Add(this.CalendarUpdateButton);
+            this.groupBox3.Controls.Add(this.HourSelectCheckListBox);
             this.groupBox3.Location = new System.Drawing.Point(349, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(417, 396);
@@ -341,26 +341,28 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Hourly Access";
             // 
-            // button4
+            // CalendarUpdateButton
             // 
-            this.button4.Location = new System.Drawing.Point(190, 367);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(189, 23);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.CalendarUpdateButton.Location = new System.Drawing.Point(190, 367);
+            this.CalendarUpdateButton.Name = "CalendarUpdateButton";
+            this.CalendarUpdateButton.Size = new System.Drawing.Size(189, 23);
+            this.CalendarUpdateButton.TabIndex = 1;
+            this.CalendarUpdateButton.Text = "Update";
+            this.CalendarUpdateButton.UseVisualStyleBackColor = true;
+            this.CalendarUpdateButton.Click += new System.EventHandler(this.button4_Click);
             // 
-            // checkedListBox1
+            // HourSelectCheckListBox
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(25, 53);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(354, 304);
-            this.checkedListBox1.TabIndex = 0;
+            this.HourSelectCheckListBox.FormattingEnabled = true;
+            this.HourSelectCheckListBox.Location = new System.Drawing.Point(25, 53);
+            this.HourSelectCheckListBox.Name = "HourSelectCheckListBox";
+            this.HourSelectCheckListBox.Size = new System.Drawing.Size(354, 304);
+            this.HourSelectCheckListBox.TabIndex = 0;
+            this.HourSelectCheckListBox.SelectedIndexChanged += new System.EventHandler(this.HourSelectCheckListBox_SelectedIndexChanged);
             // 
             // GroupsDayGroupBox
             // 
-            this.GroupsDayGroupBox.Controls.Add(this.button3);
+            this.GroupsDayGroupBox.Controls.Add(this.CalendarSelectButton);
             this.GroupsDayGroupBox.Controls.Add(this.label25);
             this.GroupsDayGroupBox.Controls.Add(this.label24);
             this.GroupsDayGroupBox.Controls.Add(this.label23);
@@ -374,14 +376,15 @@
             this.GroupsDayGroupBox.TabStop = false;
             this.GroupsDayGroupBox.Text = "Groups and Day";
             // 
-            // button3
+            // CalendarSelectButton
             // 
-            this.button3.Location = new System.Drawing.Point(82, 184);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Select";
-            this.button3.UseVisualStyleBackColor = true;
+            this.CalendarSelectButton.Location = new System.Drawing.Point(82, 184);
+            this.CalendarSelectButton.Name = "CalendarSelectButton";
+            this.CalendarSelectButton.Size = new System.Drawing.Size(187, 23);
+            this.CalendarSelectButton.TabIndex = 5;
+            this.CalendarSelectButton.Text = "Select";
+            this.CalendarSelectButton.UseVisualStyleBackColor = true;
+            this.CalendarSelectButton.Click += new System.EventHandler(this.button3_Click);
             // 
             // label25
             // 
@@ -413,6 +416,14 @@
             // DayCalendarComboBox
             // 
             this.DayCalendarComboBox.FormattingEnabled = true;
+            this.DayCalendarComboBox.Items.AddRange(new object[] {
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"});
             this.DayCalendarComboBox.Location = new System.Drawing.Point(82, 141);
             this.DayCalendarComboBox.Name = "DayCalendarComboBox";
             this.DayCalendarComboBox.Size = new System.Drawing.Size(187, 21);
@@ -433,6 +444,7 @@
             this.PersonGroupCalendarComboBox.Name = "PersonGroupCalendarComboBox";
             this.PersonGroupCalendarComboBox.Size = new System.Drawing.Size(187, 21);
             this.PersonGroupCalendarComboBox.TabIndex = 0;
+            this.PersonGroupCalendarComboBox.SelectedIndexChanged += new System.EventHandler(this.PersonGroupCalendarComboBox_SelectedIndexChanged);
             // 
             // tabSecurity
             // 
@@ -773,7 +785,7 @@
             this.TimeKeeperDisplay.Name = "TimeKeeperDisplay";
             this.TimeKeeperDisplay.Size = new System.Drawing.Size(250, 50);
             this.TimeKeeperDisplay.TabIndex = 7;
-            this.TimeKeeperDisplay.Text = "0.00";
+            this.TimeKeeperDisplay.Text = "--.--";
             this.TimeKeeperDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label28
@@ -796,7 +808,7 @@
             this.AlarmTimerDisplay.Name = "AlarmTimerDisplay";
             this.AlarmTimerDisplay.Size = new System.Drawing.Size(250, 50);
             this.AlarmTimerDisplay.TabIndex = 5;
-            this.AlarmTimerDisplay.Text = "0.00";
+            this.AlarmTimerDisplay.Text = "--.--";
             this.AlarmTimerDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label26
@@ -954,7 +966,7 @@
             // 
             this.ControlPanelDisplay.AutoSize = true;
             this.ControlPanelDisplay.BackColor = System.Drawing.Color.Black;
-            this.ControlPanelDisplay.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ControlPanelDisplay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ControlPanelDisplay.ForeColor = System.Drawing.Color.Lime;
             this.ControlPanelDisplay.Location = new System.Drawing.Point(320, 27);
             this.ControlPanelDisplay.MaximumSize = new System.Drawing.Size(425, 75);
@@ -970,7 +982,7 @@
             this.DoorPersonSelection.Controls.Add(this.DoorPersonSelectionButton);
             this.DoorPersonSelection.Controls.Add(this.label21);
             this.DoorPersonSelection.Controls.Add(this.label20);
-            this.DoorPersonSelection.Controls.Add(this.dateTimePicker1);
+            this.DoorPersonSelection.Controls.Add(this.DoorAccessDateTimePicker);
             this.DoorPersonSelection.Controls.Add(this.label16);
             this.DoorPersonSelection.Controls.Add(this.label15);
             this.DoorPersonSelection.Controls.Add(this.PersonSelectComboBox);
@@ -984,7 +996,7 @@
             // 
             // DoorPersonSelectionButton
             // 
-            this.DoorPersonSelectionButton.Location = new System.Drawing.Point(32, 176);
+            this.DoorPersonSelectionButton.Location = new System.Drawing.Point(31, 167);
             this.DoorPersonSelectionButton.Name = "DoorPersonSelectionButton";
             this.DoorPersonSelectionButton.Size = new System.Drawing.Size(209, 37);
             this.DoorPersonSelectionButton.TabIndex = 0;
@@ -1004,25 +1016,25 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(29, 138);
+            this.label20.Location = new System.Drawing.Point(6, 126);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(30, 13);
             this.label20.TabIndex = 6;
             this.label20.Text = "Time";
             // 
-            // dateTimePicker1
+            // DoorAccessDateTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm tt";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(85, 138);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(156, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.DoorAccessDateTimePicker.CustomFormat = "MM/dd/yyyy hh:mm tt";
+            this.DoorAccessDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DoorAccessDateTimePicker.Location = new System.Drawing.Point(52, 126);
+            this.DoorAccessDateTimePicker.Name = "DoorAccessDateTimePicker";
+            this.DoorAccessDateTimePicker.Size = new System.Drawing.Size(216, 20);
+            this.DoorAccessDateTimePicker.TabIndex = 5;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(29, 93);
+            this.label16.Location = new System.Drawing.Point(6, 89);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 13);
             this.label16.TabIndex = 3;
@@ -1031,7 +1043,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(26, 51);
+            this.label15.Location = new System.Drawing.Point(6, 51);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(30, 13);
             this.label15.TabIndex = 2;
@@ -1040,22 +1052,22 @@
             // PersonSelectComboBox
             // 
             this.PersonSelectComboBox.FormattingEnabled = true;
-            this.PersonSelectComboBox.Location = new System.Drawing.Point(85, 86);
+            this.PersonSelectComboBox.Location = new System.Drawing.Point(52, 89);
             this.PersonSelectComboBox.Name = "PersonSelectComboBox";
-            this.PersonSelectComboBox.Size = new System.Drawing.Size(156, 21);
+            this.PersonSelectComboBox.Size = new System.Drawing.Size(216, 21);
             this.PersonSelectComboBox.TabIndex = 1;
             // 
             // DoorSelectComboBox
             // 
             this.DoorSelectComboBox.FormattingEnabled = true;
-            this.DoorSelectComboBox.Location = new System.Drawing.Point(85, 43);
+            this.DoorSelectComboBox.Location = new System.Drawing.Point(52, 48);
             this.DoorSelectComboBox.Name = "DoorSelectComboBox";
-            this.DoorSelectComboBox.Size = new System.Drawing.Size(156, 21);
+            this.DoorSelectComboBox.Size = new System.Drawing.Size(216, 21);
             this.DoorSelectComboBox.TabIndex = 0;
             // 
             // buttonReturn1
             // 
-            this.buttonReturn1.Location = new System.Drawing.Point(809, 325);
+            this.buttonReturn1.Location = new System.Drawing.Point(3, 213);
             this.buttonReturn1.Name = "buttonReturn1";
             this.buttonReturn1.Size = new System.Drawing.Size(97, 23);
             this.buttonReturn1.TabIndex = 0;
@@ -1117,7 +1129,7 @@
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.Location = new System.Drawing.Point(806, 296);
+            this.buttonSubmit.Location = new System.Drawing.Point(3, 184);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(97, 23);
             this.buttonSubmit.TabIndex = 0;
@@ -1129,14 +1141,16 @@
             // 
             this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.radioAccessPanel);
+            this.groupBox2.Controls.Add(this.buttonReturn1);
             this.groupBox2.Controls.Add(this.radioDoors);
             this.groupBox2.Controls.Add(this.radioCalendar);
+            this.groupBox2.Controls.Add(this.buttonSubmit);
             this.groupBox2.Controls.Add(this.radioSecurity);
             this.groupBox2.Controls.Add(this.radioPeople);
             this.groupBox2.Controls.Add(this.radioSupervisor);
             this.groupBox2.Location = new System.Drawing.Point(803, 52);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(102, 228);
+            this.groupBox2.Size = new System.Drawing.Size(106, 261);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Navigation";
@@ -1158,9 +1172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 583);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.buttonReturn1);
             this.Controls.Add(this.TabNav);
-            this.Controls.Add(this.buttonSubmit);
             this.Name = "Mainpage";
             this.Text = "UCI";
             this.Load += new System.EventHandler(this.Mainpage_Load);
@@ -1256,7 +1268,7 @@
         private System.Windows.Forms.ComboBox PersonSelectComboBox;
         private System.Windows.Forms.ComboBox DoorSelectComboBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DoorAccessDateTimePicker;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label ControlPanelDisplay;
@@ -1275,7 +1287,7 @@
         private System.Windows.Forms.Button enterButton;
         private System.Windows.Forms.Button keypadButton0;
         private System.Windows.Forms.GroupBox GroupsDayGroupBox;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button CalendarSelectButton;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
@@ -1283,8 +1295,8 @@
         private System.Windows.Forms.ComboBox DoorGroupCalendarComboBox;
         private System.Windows.Forms.ComboBox PersonGroupCalendarComboBox;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button CalendarUpdateButton;
+        private System.Windows.Forms.CheckedListBox HourSelectCheckListBox;
         private System.Windows.Forms.Label TimeKeeperDisplay;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label AlarmTimerDisplay;
