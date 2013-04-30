@@ -76,7 +76,7 @@ namespace UCI
         public AlarmTimerController(CardReader cr, Label TimeDisplay, Label StatusDisplay)
             : base(cr, TimeDisplay, StatusDisplay)
         {
-            sp = new SoundPlayer();
+            sp = new SoundPlayer(UCI.Properties.Resources.tos_redalert);
         }
 
         public override void killTimer()
