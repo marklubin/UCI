@@ -11,7 +11,7 @@ namespace UCI
         public LinkedList<string> eventLog { get; set; }
         private Boolean isEnabled;
         public int TIME_KEEPER_MSECS = 500;
-        public int ALARM_MSECS = 5;
+        public int ALARM_MSECS = 500;
         private int MAX_RETRIES = 3;
         public object TKController {get; set;}
         public object AController {get; set;}

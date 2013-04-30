@@ -176,7 +176,8 @@ namespace UCI
             else
             {
                 string cardID = PersonSelectComboBox.Items[PersonSelectComboBox.SelectedIndex].ToString().Split()[0];
-                this.passwordEntryMode = dac.ValidateCard(cardID, ControlPanelDisplay);
+                string doorID = DoorSelectComboBox.Items[DoorSelectComboBox.SelectedIndex].ToString().Split()[0];
+                this.passwordEntryMode = dac.ValidateCard(cardID, doorID, ControlPanelDisplay);
             }
 
         }
@@ -187,8 +188,8 @@ namespace UCI
 
             DoorAccessController dac = new DoorAccessController();
             String id = DoorSelectComboBox.Items[DoorSelectComboBox.SelectedIndex].ToString().Split()[0];
-            dac.DoorOpenRequest(id,AlarmTimerDisplay,ControlPanelDisplay);
-            
+            dac.DoorOpenRequest(id,AlarmTimerDisplay,DoorStatusDisplay);
+           
         }
 
         private void DoorCloseButton_Click(object sender, EventArgs e)

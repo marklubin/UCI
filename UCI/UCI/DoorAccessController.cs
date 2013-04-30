@@ -6,8 +6,14 @@ namespace UCI
 {
     public class DoorAccessController
     {
-        public Boolean ValidateCard(string cardID, Label display)
+        public Boolean ValidateCard(string cardID, string doorID, Label display)
         {
+            if (!UCIDatabase.cardReadersDict[doorID].activityMode())
+            {
+                display.Text = "Standby mode...";
+                return false;
+            }
+
             if (UCIDatabase.cardDict.ContainsKey(cardID))
             {
                 Card c = UCIDatabase.cardDict[cardID];
@@ -167,7 +173,7 @@ namespace UCI
                         if (tw.accessible(datetime))
                         {
                             cr.unlockDoor();
-                            cr.startTimeKeeper(new TimeKeeperController(cr,TimeKeeperDisplay,DoorStatusDisplay));
+                            cr.startTimeKeeper(new TimeKeeperController(cr,TimeKeeperDisplay,DoorStatusDisplay,ControlDisplay));
                             ControlDisplay.Text = "Access Granted";
                             DoorStatusDisplay.Text = "Unlocked";
                             return;
@@ -206,7 +212,8 @@ namespace UCI
             CardReader cr = this.findCardReader(cardReaderID);
             if (cr.door.locked) return; //can't close a locked door
             AlarmTimerController at = (AlarmTimerController)cr.AController;
-            at.killTimer();
+            if(at != null)
+                at.killTimer();
             cr.lockDoor();
             cr.closeDoor();
             DoorStatusDisplay.Text = "Locked";

@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Media;
-
-using System;
 using System.Windows.Forms;
 
 namespace UCI
@@ -46,10 +44,12 @@ namespace UCI
 
     public class TimeKeeperController : TimeController
     {
-        public TimeKeeperController(CardReader cr, Label TimeDisplay, Label StatusDisplay)
+    
+        private Label PanelDisplay;
+        public TimeKeeperController(CardReader cr, Label TimeDisplay, Label StatusDisplay, Label PanelDisplay)
             : base(cr, TimeDisplay, StatusDisplay)
         {
-            ;
+            this.PanelDisplay = PanelDisplay;
         }
         public override void onTickHandler(Object o, EventArgs e)
         {
@@ -59,6 +59,7 @@ namespace UCI
                 killTimer();
                 cr.lockDoor();
                 StatusDisplay.Text = "Locked";
+                PanelDisplay.Text = "Please Slide Card.";
 
 
             }
@@ -73,6 +74,7 @@ namespace UCI
     public class AlarmTimerController : TimeController
     {
         private SoundPlayer sp;
+        private Boolean alarmSounded = false;
         public AlarmTimerController(CardReader cr, Label TimeDisplay, Label StatusDisplay)
             : base(cr, TimeDisplay, StatusDisplay)
         {
@@ -82,18 +84,27 @@ namespace UCI
         public override void killTimer()
         {
             sp.Stop();
+            alarmSounded = false;
             base.killTimer();
         }
 
         public override void onTickHandler(object o, EventArgs e)
         {
             ms++;
-            if (ms > cr.TIME_KEEPER_MSECS)
+            if (alarmSounded)
+            {
+                if (ms % 20 == 0)
+                    StatusDisplay.Text = "";
+                else if (ms % 10 == 0)
+                    StatusDisplay.Text = "Close Door!!";
+            }
+            else if (ms > cr.TIME_KEEPER_MSECS)
             {
                 sp.PlayLooping();
+                cr.setStandby();
                 StatusDisplay.Text = "Close Door!!";
                 TimeDisplay.Text = "--.--";
-                t.Tick -= tickHandler; //no more ticks please
+                alarmSounded = true;
             }
             else
             {
